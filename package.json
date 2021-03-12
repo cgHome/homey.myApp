@@ -1,0 +1,44 @@
+{
+  "name": "homey.myapp",
+  "version": "0.0.1",
+  "main": "app.js",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-athom": "^2.1.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "homey": "^2.10.0",
+    "prettier": "2.2.1"
+  },
+  "description": "Adds support for MyBrand devices.",
+  "engines": {
+    "node": ">=12.16.1"
+  },
+  "keywords": [
+    "Smarthome",
+    "athom",
+    "homey",
+    "app",
+    "My App",
+    "org.cflat-inc.myapp"
+  ],
+  "author": "Chris Gross <cghome@gmx.net>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/"
+  },
+  "homepage": "https://homey.app/a/org.cflat-inc.myapp",
+  "scripts": {
+    "test": "homey app run",
+    "start": "npm install && homey app install",
+    "build": "homey app build",
+    "publish": "homey app publish",
+    "postpublish": "npm run init && git commit --amend --no-edit ./package.json && git push -f origin main",
+    "validate": "homey app validate -l publish",
+    "validateTest": "homey app validate",
+    "init": "npm init --quiet -y 1>/dev/null",
+    "eslint": "eslint",
+    "prettier": "prettier",
+    "createRemoteRepo": "hub create -d \"$npm_package_description\" -h $npm_package_homepage ${PWD##*/} && git commit --amend --no-edit && git push -u origin main"
+  }
+}
